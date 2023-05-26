@@ -53,6 +53,8 @@ void cdc_uart_init(void) {
     gpio_set_function(PICOPROBE_UART_RX, GPIO_FUNC_UART);
     gpio_set_pulls(PICOPROBE_UART_TX, 1, 0);
     gpio_set_pulls(PICOPROBE_UART_RX, 1, 0);
+    gpio_set_outover(PICOPROBE_UART_TX, GPIO_OVERRIDE_INVERT);
+    gpio_set_inover(PICOPROBE_UART_RX, GPIO_OVERRIDE_INVERT);
     uart_init(PICOPROBE_UART_INTERFACE, PICOPROBE_UART_BAUDRATE);
 }
 
